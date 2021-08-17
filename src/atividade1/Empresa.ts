@@ -6,14 +6,11 @@ export default class Empresa {
 
   constructor(nome: String, funcionarios: Funcionario[] = []) {
     this._nome = nome;
+    this._funcionarios = funcionarios;
   }
 
   getNome(): String {
     return this._nome;
-  }
-
-  setNome(nome: String) {
-    this._nome = nome;
   }
 
   getFuncionarios(): Funcionario[] {
