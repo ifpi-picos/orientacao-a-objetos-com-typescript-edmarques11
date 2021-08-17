@@ -3,13 +3,8 @@ import Funcionario from "./Funcionario";
 export default class Pf extends Funcionario {
   private _cpf: String;
 
-  constructor(
-    nome: String,
-    salario: Number,
-    beneficios: String[],
-    cpf: string
-  ) {
-    super(nome, salario, beneficios);
+  constructor(nome: String, salario: Number, cpf: string) {
+    super(nome, salario, ["Plano de saúde", "Vale refeição", "Férias"]);
     this._cpf = cpf;
   }
 

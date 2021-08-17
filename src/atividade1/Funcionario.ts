@@ -15,4 +15,7 @@ export default class Funcionario {
   getBeneficios(): String[] {
     return this._beneficios;
   }
+  getNome(): String {
+    return this._nome;
+  }
 }

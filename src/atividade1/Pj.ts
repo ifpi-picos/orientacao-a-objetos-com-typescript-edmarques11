@@ -3,13 +3,8 @@ import Funcionario from "./Funcionario";
 export default class Pj extends Funcionario {
   private _cpnj: String;
 
-  constructor(
-    nome: String,
-    salario: Number,
-    beneficios: String[],
-    cnpj: string
-  ) {
-    super(nome, salario, beneficios);
+  constructor(nome: String, salario: Number, cnpj: string) {
+    super(nome, salario, ["Plano de saúde"]);
     this._cpnj = cnpj;
   }
 
