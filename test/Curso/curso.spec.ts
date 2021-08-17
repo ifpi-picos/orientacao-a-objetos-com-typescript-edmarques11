@@ -14,7 +14,7 @@ const CURSO = {
 const curso = new Curso(CURSO.NOME, CURSO.DISCIPLINAS);
 
 describe("Curso", () => {
-  test("Deve criar um novo curso", () => {
+  test("Deve existir um novo curso", () => {
     expect(curso).toBeTruthy();
     expect(curso.getNome()).toEqual(CURSO.NOME);
     expect(curso.getDisciplinas()[0].getNome()).toBe(DISCIPLINA.NOME);
@@ -40,5 +40,18 @@ describe("Curso", () => {
     curso.deleteDisciplina("Orientação a objetos", 78);
 
     expect(curso.getDisciplinas().includes(disciplina)).toBe(false);
+  });
+
+  test("Não deve remover nenhuma disciplina", () => {
+    const disciplinasLength = curso.getDisciplinas().length;
+
+    curso.deleteDisciplina("Alguma", 0);
+    expect(curso.getDisciplinas().length).toBe(disciplinasLength);
+
+    curso.deleteDisciplina("Alguma", 78);
+    expect(curso.getDisciplinas().length).toBe(disciplinasLength);
+
+    curso.deleteDisciplina("Orientação a objetos", 0);
+    expect(curso.getDisciplinas().length).toBe(disciplinasLength);
   });
 });
